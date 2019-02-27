@@ -1,6 +1,6 @@
 Simple build system.
 
-* Purely functional
+* Purely functional, with reproducible and bootstrappable builds in mind
 * Runs commands in isolated environments (virtual machine or `chroot` or `proot` with `env -i`)
 * Inputs are distinguished at the syntactic level, and dependencies are automatically computed
 * Does not rely on filesystem timestamps
