@@ -49,6 +49,21 @@ value() {
   eval 'printf %s "$heap_value_'$1'"'
 }
 
+debug_print() {
+  eval 'tmpdebug=$heap_type_'"$1"
+  if test $tmpdebug = C; then
+    printf '('
+    eval 'tmpdebugb=$heap_car_'$1
+    (debug_print $tmpdebugb)
+    printf ' . '
+    eval 'tmpdebugb=$heap_cdr_'$1
+    (debug_print $tmpdebugb)
+    printf ')'
+  else
+    eval 'printf "[%s]" "$heap_value_'$1'"'
+  fi
+}
+
 stack_init_name_unit() {
   eval "stacklast_${1}=0"
 }
@@ -113,15 +128,31 @@ od -v -A n -t x1 | sed -e 's/^ //' | tr ' ' \\n | (while read c; do
    28) if test "x$(stack_peek_name_hex parse)" = 'x'; then
          stack_pop_name_result_unit parse current
        fi
-       stack_push_name_hex_unit parse 28
+       stack_push_name_hex_unit parse 2028
        stack_push_name_hex_unit parse '';;
    # Close paren
    29) if test "x$(stack_peek_name_hex parse)" = 'x'; then
          stack_pop_name_result_unit parse current
+       else
+         stack_pop_name_result_unit parse current
+         alloc_primitive_hex_unit "Sym $current"
+         stack_push_name_hex_unit parse $heap_max
        fi
-       stack_push_name_hex_unit parse 29;;
+       alloc_primitive_hex_unit "Nil"
+       cdr=$heap_max
+       while test "x$(stack_peek_name_hex parse)" != 'x2028'; do
+         stack_pop_name_result_unit parse current
+         car=$current
+         alloc_cons_ptr_ptr_unit $car $cdr
+         cdr=$heap_max
+       done
+       stack_pop_name_result_unit parse current
+       stack_push_name_hex_unit parse $cdr;;
    # Space
    20) if test "x$(stack_peek_name_hex parse)" != 'x'; then
+         stack_pop_name_result_unit parse current
+         alloc_primitive_hex_unit "Sym $current"
+         stack_push_name_hex_unit parse $heap_max
          stack_push_name_hex_unit parse ''
        fi;;
    # identifier character
@@ -134,8 +165,8 @@ echo stack:
 
 while test "x$(stack_len_name_int parse)" != 'x0'; do
   stack_pop_name_result_unit parse tmp
-  echo "$tmp 0a"
-done | tac | xxd -ps -r
+  echo "$tmp"
+done | tac
 
 echo heap:
 
@@ -143,5 +174,8 @@ for i in `seq $heap_max`; do
   eval "echo $i \$heap_type_$i \$heap_car_$i \$heap_cdr_$i \$heap_value_$i"
 done
 
-echo $(value $(cdr $heap_max))
+#echo $(value $(cdr $heap_max))
+
+debug_print $heap_max
+echo
 )
