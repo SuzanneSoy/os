@@ -1,0 +1,6 @@
+default-job:
+  script:
+    make
+  artifacts:
+    paths:
+      - artifacts/
