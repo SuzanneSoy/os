@@ -1,0 +1,13 @@
+language: c
+sudo: false
+
+# TODO: don't overwrite artifacts.
+script:
+ - make
+ - ./travis/auto-push.sh "https://github.com/jsmaniac/os-test-framework.git" \
+                         "git@github.com:jsmaniac/os-deploy-artifacts.git" \
+                         "artifacts-$TRAVIS_BRANCH" \
+                         "deploy-base" \
+                         "82336783091193a09541c42d0f688c6478323952" \
+                         "_build/artifacts" \
+                         "$(if test "$TRAVIS_BRANCH" = "master"; then echo master; else echo dev; fi)"
