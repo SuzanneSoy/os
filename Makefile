@@ -1,17 +1,22 @@
 all: deps.svg deps.png deps.pdf
 
 deps.dot: deps.sh
+        mkdir -p $$(dirname $@)
 	sh $< > $@
 
-deps.svg: deps.dot Makefile
+artifacts/deps.svg: deps.dot Makefile
+        mkdir -p $$(dirname $@)
 	dot -Tsvg $< > $@
 
-deps.png: deps.dot Makefile
+artifacts/deps.png: deps.dot Makefile
+        mkdir -p $$(dirname $@)
 	dot -Tpng $< > $@
 
 deps.ps: deps.dot Makefile
+        mkdir -p $$(dirname $@)
 	dot -Tps  $< > $@
 
-deps.pdf: deps.ps Makefile
+artifacts/deps.pdf: deps.ps Makefile
+        mkdir -p $$(dirname $@)
 	ps2pdf $< $@
 
