@@ -1,4 +1,4 @@
-all: deps.svg deps.png deps.pdf
+all: artifacts/deps.svg artifacts/deps.png artifacts/deps.pdf
 
 deps.dot: deps.sh
 	mkdir -p $$(dirname $@)
