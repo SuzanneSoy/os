@@ -1,3 +1,6 @@
+before_script:
+  - apt-get -y install graphviz ghostscript
+
 default-job:
   script:
     make
