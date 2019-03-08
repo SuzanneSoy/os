@@ -24,4 +24,4 @@ artifacts/index.html: Makefile
 	cp doc-src/index.html $@
 
 artifacts/references/index.html:
-        markdown -o $@ references.md
+	markdown -o $@ references.md
