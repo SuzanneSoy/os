@@ -21,4 +21,4 @@ artifacts/deps.pdf: deps.ps Makefile
 	ps2pdf $< $@
 
 artifacts/index.html: Makefile
-	printf %s '<h1>{{{project-name}}}</h1>'
+	printf %s '<h1>{{{project-name}}}</h1>' > $@
