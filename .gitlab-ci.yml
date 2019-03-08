@@ -2,9 +2,10 @@ before_script:
   - apt-get update -qq
   - apt-get -y -qq install graphviz ghostscript
 
-default-job:
+pages:
   script:
-    make
+    - make
+    - if test -e public; then mv public public.old; fi && mv artifacts public
   artifacts:
     paths:
-      - artifacts/
+      - public/
