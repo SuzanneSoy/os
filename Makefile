@@ -1,4 +1,4 @@
-all: artifacts/deps.svg artifacts/deps.png artifacts/deps.pdf artifacts/index.html
+all: artifacts/deps.svg artifacts/deps.png artifacts/deps.pdf artifacts/index.html artifacts/references/index.html
 
 deps.dot: deps.sh
 	mkdir -p $$(dirname $@)
@@ -21,4 +21,7 @@ artifacts/deps.pdf: deps.ps Makefile
 	ps2pdf $< $@
 
 artifacts/index.html: Makefile
-	printf %s '<h1>{{{project-name}}}</h1>' > $@
+	cp doc-src/index.html $@
+
+artifacts/references/index.html:
+        markdown -o $@ references.md

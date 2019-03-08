@@ -1,6 +1,6 @@
 before_script:
   - apt-get update -qq
-  - apt-get -y -qq install graphviz ghostscript
+  - apt-get -y -qq install graphviz ghostscript markdown
 
 pages:
   stage: deploy

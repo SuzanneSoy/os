@@ -1,6 +1,13 @@
 language: c
 sudo: false
 
+addons:
+  apt:
+    packages:
+      - graphviz
+      - ghostscript
+      - markdown
+
 # TODO: don't overwrite artifacts.
 script:
  - make
