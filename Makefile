@@ -21,7 +21,9 @@ artifacts/deps.pdf: deps.ps Makefile
 	ps2pdf $< $@
 
 artifacts/index.html: Makefile
+	mkdir -p $$(dirname $@)
 	cp doc-src/index.html $@
 
 artifacts/references/index.html:
-	markdown -o $@ references.md
+	mkdir -p $$(dirname $@)
+	markdown references.md > $@
