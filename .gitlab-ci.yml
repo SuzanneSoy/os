@@ -3,7 +3,7 @@ before_script:
   - apt-get -y -qq install graphviz ghostscript
 
 pages:
-  phase: deploy
+  stage: deploy
   script:
     - make
     - if test -e public; then mv public public.old; fi && mv artifacts public
