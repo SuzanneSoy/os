@@ -20,7 +20,7 @@ artifacts/deps.pdf: deps.ps Makefile
 	mkdir -p $$(dirname $@)
 	ps2pdf $< $@
 
-artifacts/index.html: doc-src/index.html Makefile
+artifacts/index.html: doc-src/index.html artifacts/references/style.css artifacts/deps.svg artifacts/deps.png artifacts/deps.pdf artifacts/references/index.html Makefile
 	mkdir -p $$(dirname $@)
 	cp doc-src/index.html $@
 
