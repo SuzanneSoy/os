@@ -8,10 +8,10 @@
 
 ## Keyboard
 
-* N-shot injection keycaps:
+* N-shot injection keycaps
   * [![double-shot injection keycaps cut in half to expose the two plastic parts](https://i.imgur.com/kVQNa.jpg)](https://imgur.com/a/OhRd4)
   * [The best mechanical keycaps](https://blog.wooting.nl/what-are-the-best-mechanical-keyboard-keycaps), a presentation of various properties of keycaps
-  * [![Quadruple-shot injection keycap with two colors for the label and transparent plastic for caps lock or scroll lock indicator](https://deskauthority.net/download/file.php?id=5573)](https://deskauthority.net/viewtopic.php?p=80654#p80654)
+  * [![Quadruple-shot injection keycap with two colors for the label and transparent plastic for caps lock or scroll lock indicator](https://deskthority.net/download/file.php?id=5573)](https://deskthority.net/viewtopic.php?p=80654#p80654)
 * Planck [![Example layout of a planck keyboard](https://i.imgur.com/cNipMSc.png)](https://i.imgur.com/cNipMSc.png)
 * [WASD Keyboards](https://www.wasdkeyboards.com/) does full-color print on keycaps. Examples:
   [![illustrations (planets and space decor) on keys](https://i.imgur.com/F3lgqHJ.jpg)](https://i.imgur.com/F3lgqHJ.jpg)
