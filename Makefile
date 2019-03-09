@@ -20,13 +20,17 @@ artifacts/deps.pdf: deps.ps Makefile
 	mkdir -p $$(dirname $@)
 	ps2pdf $< $@
 
-artifacts/index.html: doc-src/index.html artifacts/references/style.css artifacts/deps.svg artifacts/deps.png artifacts/deps.pdf artifacts/references/index.html Makefile
+artifacts/index.html: doc-src/index.html artifacts/style.css artifacts/deps.svg artifacts/deps.png artifacts/deps.pdf artifacts/references/index.html Makefile
 	mkdir -p $$(dirname $@)
 	cp doc-src/index.html $@
 
 artifacts/references/index.html: references.md artifacts/references/style.css Makefile
 	mkdir -p $$(dirname $@)
 	doc-src/markdown2html.sh $< "References" > $@
+
+artifacts/style.css: doc-src/style.css Makefile
+	mkdir -p $$(dirname $@)
+	cp $< $@
 
 artifacts/references/style.css: doc-src/style.css Makefile
 	mkdir -p $$(dirname $@)
