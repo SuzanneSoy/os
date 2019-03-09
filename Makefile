@@ -12,13 +12,9 @@ artifacts/deps.png: deps.dot Makefile
 	mkdir -p $$(dirname $@)
 	dot -Tpng $< > $@
 
-deps.ps: deps.dot Makefile
+artifacts/deps.pdf: deps.dot Makefile
 	mkdir -p $$(dirname $@)
-	dot -Tps  $< > $@
-
-artifacts/deps.pdf: deps.ps Makefile
-	mkdir -p $$(dirname $@)
-	ps2pdf $< $@
+	dot -Tpdf  $< > $@
 
 artifacts/index.html: doc-src/index.html artifacts/style.css artifacts/deps.svg artifacts/deps.png artifacts/deps.pdf artifacts/references/index.html Makefile
 	mkdir -p $$(dirname $@)
