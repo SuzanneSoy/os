@@ -1,7 +1,15 @@
+# Multimedia software
+
 * [9780751305418](https://isbnsearch.com/isbn/9780751305418) Dorling Kindersley Multimedia The Complete User-Friendly Guide to the Internet, World Wide Web, DVDs, Virtual Reality, CD-ROMs and 3D Games
   
   This is an overview of the professions and techniques involved in the creation of interactive multimedia software. It fits well as a welcome guide for new employes, to let them know what the other professions are doing in the company, or as a pamhplet for students interested in joining a school training them for these professions.
+
+# User interface
+
 * The Humane interface Jeff Raskin
+
+# Programming practices
+
 * The psychology of computer programming silver anniversary edition
 
 # Hardware
