@@ -27,3 +27,20 @@
   [![On-key characters for greek, mathematical symbols and other languages accessible via XCompose](https://i.imgur.com/21OoXw0.jpg)](https://imgur.com/a/DpQHW)
 * Manufacturers and sellers:
   * [Massdrop](https://www.massdrop.com/) gathers enthusiasts to buy medium-sized batches of random items (including keybords) to reduce the costs of small series that would not be commercialy viaable otherwise.
+
+# File format standards
+
+## Used to generate or write files in this project
+
+* [Polyglot Markup](https://dev.w3.org/html5/html-polyglot/html-polyglot.html), an intersection of valid HTML5 and XHTML (except for the doctype)
+* POSIX a.k.a. IEEE Std 1003.1 a.k.a. Open Group Base Specifications Issue 7:
+  * [latest edition](https://pubs.opengroup.org/onlinepubs/9699919799/),
+  * [2017-2018 edition](https://pubs.opengroup.org/onlinepubs/9699919799.2018edition/),
+  *      [2016 edition](https://pubs.opengroup.org/onlinepubs/9699919799.2016edition/),
+  *      [2013 edition](https://pubs.opengroup.org/onlinepubs/9699919799.2013edition/),
+  *      [2008 edition](https://pubs.opengroup.org/onlinepubs/9699919799.2008edition/).
+  * The oldest version of POSIX [(IEEE Std 1003.2-1992)](https://ieeexplore.ieee.org/document/6880751) that we could find is behind a paywall.
+  * The oldest version of the Single Unix® Specification [(Version 1 Document Set UNIX 95)](https://publications.opengroup.org/c43x) that we could find is behind a login wall, but seems free to download.
+* [GraphViz Reference](https://www.graphviz.org/doc/info/)
+
+## Used to read files
