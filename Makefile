@@ -1,4 +1,4 @@
-all: artifacts/deps.svg artifacts/deps.png artifacts/deps.pdf artifacts/index.html artifacts/references/index.html
+all: artifacts/deps.svg artifacts/deps.png artifacts/deps.pdf artifacts/index.html artifacts/references/index.html micro-scheme/test-result
 
 deps.dot: deps.sh
 	mkdir -p $$(dirname $@)
@@ -31,3 +31,7 @@ artifacts/style.css: doc-src/style.css Makefile
 artifacts/references/style.css: doc-src/style.css Makefile
 	mkdir -p $$(dirname $@)
 	cp $< $@
+
+micro-scheme/test-result: micro-scheme/nano-scheme.sh Makefile
+	mkdir -p $$(dirname $@)
+	sh $< > $@
