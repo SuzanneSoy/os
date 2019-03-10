@@ -38,9 +38,9 @@
 # N null           "_"
 # F free cell      ptr
 # I integer        int
-# Y symbol         hex
+# Y symbol         octal
 #
-# Note: hex strings must not contain any spaces.
+# Note: octal strings must not contain any spaces.
 
 h=0
 s=0
@@ -97,7 +97,7 @@ debug_print() {
   elif test $a = Y; then
     if $2; then printf %s '.'; fi
     heap_get_val $1
-    printf %s $a | xxd -ps -r
+    printf \\$a
     if $2; then printf %s ')'; fi
   else
     if $2; then printf %s '.'; fi
@@ -110,21 +110,86 @@ debug_print() {
   fi
 }
 
+eval_scheme() {
+  local callee ptr result
+  heap_get_type $1
+  if test $a = P; then
+      heap_get_val $1
+      # TDODO: use a stack
+      echo h=$h
+      heap_sbrk; heap_set_pair $h P $a $h;
+      echo h=$h
+      callee=$a
+      echo -n callee=
+      debug_print $callee false
+      echo
+      # compute the arguments
+      a=P
+      heap_get_cdr $1
+      ptr=$a
+      heap_get_type $ptr
+      echo cdr1=$ptr type=$a
+      while test "$a" != N; do
+        heap_get_val $ptr
+        echo val=$a
+        eval_scheme $a
+        # TODO: push on a stack
+        echo h=$h
+        heap_sbrk; heap_set_pair $h P $a $h;
+        echo h=$h
+        result=$a
+        echo result=$result
+        heap_get_cdr $ptr
+        ptr=$a
+        heap_get_type $ptr
+        echo cdr=$ptr type=$a
+        a=N
+      done
+      # TODO: this assumes that the callee is a symbol.
+      heap_get_val $callee
+      echo callee====$callee
+      echo callee----$a
+      case $a in
+        # octal for "r"
+        162) echo READ
+             # fake read (always returns "h", soon to be "hello"!)
+             a=150;; # TODO: should be some-input | od -v -A n -t x1 | read -n 1 a
+        # octal for "w"
+        167) echo WRITE: $result
+             printf \\$result >> output;; # TODO: should use octal, \x is not portable.
+        *)   echo TODO_OR_ERROR
+             a=42;;
+      esac
+  else
+    echo TODO_OR_ERROR
+    a=42
+  fi
+}
+
 main() {
-  printf '(w((lxx)r))' \
-    | od -v -A n -t x1 \
+  # printf '(w((lxx)r))' \
+  # printf '(r)' \
+  printf '(w(r))' \
+    | od -v -A n -t o1 \
     | sed -e 's/^ //' \
     | tr ' ' \\n \
     | (while read c; do
 	 echo lex:$c
 	 case "$c" in
-	   28)                              s=$(($s+1)); eval s$s=M  ;;
-	   29) stack_debug; rlist; stack_debug ;;
+           # octal for "("
+	   050)                              s=$(($s+1)); eval s$s=M  ;;
+           # octal for ")"
+	   051) stack_debug; rlist; stack_debug ;;
 	   *)  heap_sbrk; heap_set $h Y $c; s=$(($s+1)); eval s$s=$h ;;
 	 esac
        done
        heap_debug
-       debug_print $h false)
+       echo
+       to_eval=$h
+       heap_sbrk; heap_set $h N _
+       eval_scheme $to_eval
+       echo
+       debug_print $to_eval false)
 }
 
 if true; then main; exit $?; fi
