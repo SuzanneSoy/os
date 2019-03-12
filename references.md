@@ -46,6 +46,13 @@
   [![On-key characters for greek, mathematical symbols and other languages accessible via XCompose](https://i.imgur.com/21OoXw0.jpg)](https://imgur.com/a/DpQHW)
 * Manufacturers and sellers:
   * [Massdrop](https://www.massdrop.com/) gathers enthusiasts to buy medium-sized batches of random items (including keybords) to reduce the costs of small series that would not be commercialy viaable otherwise.
+* TODO: link to transparent keycaps with labels below
+* [Apple Touch Bar](https://support.apple.com/en-us/HT207055)
+* [Optimus Maximus](https://www.artlebedev.com/optimus/maximus/) keyboard has OLED screens below the keys, which are transparent, so that the symbols or icons under the keys can be changed.
+
+## Screen
+
+* Pixel Qi
 
 # File format standards
 
@@ -64,3 +71,23 @@
 * [GraphViz Reference](https://www.graphviz.org/doc/info/)
 
 ## Used to read files
+
+# Bootstrap
+
+Bootstrapping is an important facet of technology. By having a clear
+path to bootstrap a given branch of science or technology we can
+explain it in a more synthetic way, implement things in a clean way
+while getting rid of historical blunders and baseless
+traditions.
+
+Having some hindsight on the shortest path to success can give some
+foresight on the future directions to explore. If the failed paths are
+also made clear, this foresight might extend to knowing which future
+directions should likely be avoided.
+
+The references in this section are not limited to computer-related
+technologies.
+
+* [Repstrap](https://www.reprap.org/wiki/Category:RepStrap)
+* [Global Village Construction Set](https://www.opensourcetechnology.org/gvcs/)
+* [The Knowledge](https://isbnsearch.com/isbn/9780143127048) How to rebuild our world from scratch, Lewis Dartnell, ISBN-10: 0143127047, ISBN-13: 978-0143127048
