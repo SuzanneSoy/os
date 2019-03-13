@@ -46,13 +46,25 @@
   [![On-key characters for greek, mathematical symbols and other languages accessible via XCompose](https://i.imgur.com/21OoXw0.jpg)](https://imgur.com/a/DpQHW)
 * Manufacturers and sellers:
   * [Massdrop](https://www.massdrop.com/) gathers enthusiasts to buy medium-sized batches of random items (including keybords) to reduce the costs of small series that would not be commercialy viaable otherwise.
-* TODO: link to transparent keycaps with labels below
+* [Relegendable keycaps](https://pimpmykeyboard.zendesk.com/hc/en-us/articles/204416135-What-are-Relegendable-Keycaps-), a paper label can be placed below a transparent snap-on top. [Other source](https://www.fentek-ind.com/keys.htm#relegend).
+  [![Relegendable keys can have part of the legend on the front, and can be flat keys or thick keys.](https://pimpmykeyboard.zendesk.com/hc/en-us/article_attachments/201690109/Relegendables.jpg)](https://pimpmykeyboard.zendesk.com/hc/en-us/articles/204416135-What-are-Relegendable-Keycaps-)
 * [Apple Touch Bar](https://support.apple.com/en-us/HT207055)
 * [Optimus Maximus](https://www.artlebedev.com/optimus/maximus/) keyboard has OLED screens below the keys, which are transparent, so that the symbols or icons under the keys can be changed.
 
 ## Screen
 
-* Pixel Qi
+* [OLPC display](http://wiki.laptop.org/go/Display#Understanding_the_display_system)
+
+  The OLPC (One Laptop Per Child project) integrates a Pixel Qi
+  screen. This screen uses subpixels (red, green, blue) with a square
+  aspect ratio using a non-traditional layout of the subpixels. It
+  features a reflective higher-resolution black and white display,
+  which works in bright sunlight. Behind that black and white layer,
+  there is a backlit screen with colored pixels. This means that
+  depending on the lighting of the environment and backlight
+  brightness, the color may fade away, but a crisp black and white
+  picture will always be visible. This also allows for reduced power
+  consumption if the backlight is disabled or its brightness reduced.
 
 # File format standards
 
@@ -88,6 +100,20 @@ directions should likely be avoided.
 The references in this section are not limited to computer-related
 technologies.
 
-* [Repstrap](https://www.reprap.org/wiki/Category:RepStrap)
+* [RepStrap](https://www.reprap.org/wiki/Category:RepStrap)
+
+  RepRap is a 3D printer that is capable of replicating most of its
+  parts which are not off-the-shelf.
+
+  RepStrap projects are about creating an initial RepRap without an
+  existing RepRap and without advanced tooling.
 * [Global Village Construction Set](https://www.opensourcetechnology.org/gvcs/)
-* [The Knowledge](https://isbnsearch.com/isbn/9780143127048) How to rebuild our world from scratch, Lewis Dartnell, ISBN-10: 0143127047, ISBN-13: 978-0143127048
+
+  The GVCS aims to design construction kits for 50 industrial machines
+  which would be necessary for a self-sufficient village. Among these
+  are the compressed earth brick press (used to make bricks for
+  buildings), a tractor, a wind turbine, or the Fabrication
+  Construction Set which can be used to build the other machines.
+* [The Knowledge](https://isbnsearch.com/isbn/9780143127048) How to
+  rebuild our world from scratch, Lewis Dartnell, ISBN-10: 0143127047,
+  ISBN-13: 978-0143127048
